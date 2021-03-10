@@ -1,16 +1,12 @@
 package main
 
-import "fmt"
-
-
-func buzz(){
-	fmt.Println("buzz!")
-}
+import (
+	"fmt"
+	"os/user"
+	"time"
+)
 
 func main(){
-	fmt.Println("Hello World")
-}
-
-func init(){
-	fmt.Println("Init!")
+	fmt.Println("Hello World", time.Now())
+	fmt.Println(user.Current())
 }
