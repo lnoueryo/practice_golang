@@ -4,29 +4,14 @@ import (
 	"fmt"
 )
 
-func add(x, y int) (int, int) {
-	fmt.Println("add function")
-	return x + y, x - y
-}
-
-func cal(price, item int) (result int){
-	result = price * item
-	return
-}
-
-func convert(price int) float64{
-	return float64(price)
+func foo(params ...int){
+	fmt.Println(len(params), params)
 }
 
 func main(){
-	r1, r2 := add(10, 20)
-	fmt.Println(r1, r2)
+	foo(10, 20)//[10 20]
+	foo(10, 20, 30)//[10 20 30]
 
-	r3 := cal(100, 2)
-	fmt.Println(r3)
-
-	f := func(x int){
-		fmt.Println("inner func")
-	}
-	f(1)
+	s := []int{1, 2, 3}
+	foo(s...)//[1 2 3]
 }
