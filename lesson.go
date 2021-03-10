@@ -2,25 +2,15 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
-var (
-	i int = 1
-	f64 float64 = 1.2
-	s string = "test"
-	t, f bool = true, false
-)
-
-func foo(){
-	xi := 1
-	xf64 := 1.2
-	xs := "test"
-	xt, xf := true, false
-	fmt.Println(xi, xf64, xs, xt, xf)
-	fmt.Printf("%T", xf64)
-}
-	
 
 func main(){
-	fmt.Println(i, f64, s, t, f)
-	foo()
+	var x int = 1
+	xx := float64(x)
+	fmt.Printf("%T %v\n", xx, xx)
+
+	var s string = "14"
+	i, _ :=strconv.Atoi(s)
+	fmt.Printf("%T %v", i, i)
 }
