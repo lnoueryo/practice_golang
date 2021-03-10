@@ -4,26 +4,29 @@ import (
 	"fmt"
 )
 
+func add(x, y int) (int, int) {
+	fmt.Println("add function")
+	return x + y, x - y
+}
+
+func cal(price, item int) (result int){
+	result = price * item
+	return
+}
+
+func convert(price int) float64{
+	return float64(price)
+}
+
 func main(){
-	n := []int{1, 2, 3, 4, 5}
-	fmt.Println(n)
-	fmt.Println(n[2])
-	fmt.Println(n[2:4])
-	fmt.Println(n[:4])
-	fmt.Println(n[2:])
-	fmt.Println(n[:])
+	r1, r2 := add(10, 20)
+	fmt.Println(r1, r2)
 
-	n[2] = 100
-	fmt.Println(n)
+	r3 := cal(100, 2)
+	fmt.Println(r3)
 
-	var board = [][]int{
-		[]int{0, 1, 2},
-		[]int{3, 4, 5},
-		[]int{6, 7, 8},
+	f := func(x int){
+		fmt.Println("inner func")
 	}
-
-	fmt.Println(board)
-
-	n = append(n, 100, 200, 300)
-	fmt.Println(n)
+	f(1)
 }
