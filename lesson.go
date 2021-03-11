@@ -4,14 +4,23 @@ import (
 	"fmt"
 )
 
-func foo(params ...int){
-	fmt.Println(len(params), params)
-}
 
 func main(){
-	foo(10, 20)//[10 20]
-	foo(10, 20, 30)//[10 20 30]
+	num := 7
+	if num % 2 == 0 {
+		fmt.Println("by 2")
+	} else if num % 3 == 0 {
+		fmt.Println("by 3")
+	} else {
+		fmt.Println("else")
+	}
 
-	s := []int{1, 2, 3}
-	foo(s...)//[1 2 3]
+	x, y := 10, 10
+	if x == 10 && y == 10 {
+		fmt.Println("&&")
+	}
+
+	if x == 10 || y == 10 {
+		fmt.Println("||")
+	}
 }
