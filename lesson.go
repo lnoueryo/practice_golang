@@ -1,23 +1,24 @@
 package main
 
 import (
-	"io"
-	"log"
-	"os"
+	"fmt"
 )
 
-func LoggingSettings(logFile string){
-	logfile, _ := os.OpenFile(logFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-	multilogFile := io.MultiWriter(os.Stdout, logfile)
-	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
-	log.SetOutput(multilogFile)
+
+func thirdPartyConnectDB(){
+	panic("unable to connect DB!!")
 }
 
+func save(){
+	defer func(){
+		s := recover()
+		fmt.Println(s)
+	}()
+	thirdPartyConnectDB()
+}
 
 func main(){
-	LoggingSettings("test.log")
-	_, err := os.Open("abc.log")
-	if err != nil{
-		log.Fatalln("abc.logなんてないでほんまに")
-	}
+	save()
+	fmt.Println("OK?")
+
 }
