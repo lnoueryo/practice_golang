@@ -1,35 +1,23 @@
 package main
 
 import (
-	"fmt"
+	"io"
+	"log"
+	"os"
 )
+
+func LoggingSettings(logFile string){
+	logfile, _ := os.OpenFile(logFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	multilogFile := io.MultiWriter(os.Stdout, logfile)
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+	log.SetOutput(multilogFile)
+}
 
 
 func main(){
-	l := []string{"python", "go", "java"}
-	for i := 0; i < len(l); i++{
-		fmt.Println(i, l[i])
-	}
-
-	for i, v := range l{
-		fmt.Println(i, v)
-	}
-
-	for _, v := range l{
-		fmt.Println(v)
-	}
-
-	m := map[string]int{"apple": 100, "banana": 200,}
-
-	for k, v := range m{
-		fmt.Println(k, v)
-	}
-	
-	for k := range m{
-		fmt.Println(k)
-	}
-
-	for _, v := range m{
-		fmt.Println(v)
+	LoggingSettings("test.log")
+	_, err := os.Open("abc.log")
+	if err != nil{
+		log.Fatalln("abc.logなんてないでほんまに")
 	}
 }

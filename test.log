@@ -1,0 +1,12 @@
+2021/03/11 15:06:04 lesson.go:22: exit open aiueo: The system cannot find the file specified.
+2021/03/11 15:10:01 lesson.go:24: <nil>
+2021/03/11 15:10:35 lesson.go:22: open aiueo.log: The system cannot find the file specified.
+2021/03/11 15:10:35 lesson.go:23: exit open aiueo.log: The system cannot find the file specified.
+2021/03/11 16:31:17 open abc.log: The system cannot find the file specified.
+2021/03/11 16:31:17 exit open abc.log: The system cannot find the file specified.
+2021/03/11 16:31:58 exit open abc.log: The system cannot find the file specified.
+2021/03/11 16:32:33 lesson.go:22: exit open abc.log: The system cannot find the file specified.
+2021/03/11 16:35:21 lesson.go:23: exit open abc.log: The system cannot find the file specified.
+2021/03/11 16:36:36 lesson.go:23: exit open abc.log: The system cannot find the file specified.
+2021/03/11 16:40:54 lesson.go:21: abc.logなんてないで
+2021/03/11 16:42:36 lesson.go:21: abc.logなんてないでほんまに
