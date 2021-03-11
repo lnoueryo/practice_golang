@@ -2,23 +2,13 @@ package main
 
 import (
 	"fmt"
+	"github.com/markcheno/go-quote"
+	"github.com/markcheno/go-talib"
 )
 
-func one(x *int){
-	*x = 1
-}
-
-
-func main(){
-	var n int = 100
-	one(&n)
-	fmt.Println(n)
-	fmt.Println(&n)
-
-	// fmt.Println(&n)
-	// var f = 100
-	// fmt.Println(&f)
-	// var p *int = &n
-	// fmt.Println(p)
-	// fmt.Println(*p)
+func main() {
+	spy, _ := quote.NewQuoteFromYahoo("spy", "2016-01-01", "2016-04-01", quote.Daily, true)
+	fmt.Print(spy.CSV())
+	rsi2 := talib.Rsi(spy.Close, 2)
+	fmt.Println(rsi2)
 }
