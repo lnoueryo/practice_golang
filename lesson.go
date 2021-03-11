@@ -6,21 +6,30 @@ import (
 
 
 func main(){
-	num := 7
-	if num % 2 == 0 {
-		fmt.Println("by 2")
-	} else if num % 3 == 0 {
-		fmt.Println("by 3")
-	} else {
-		fmt.Println("else")
+	l := []string{"python", "go", "java"}
+	for i := 0; i < len(l); i++{
+		fmt.Println(i, l[i])
 	}
 
-	x, y := 10, 10
-	if x == 10 && y == 10 {
-		fmt.Println("&&")
+	for i, v := range l{
+		fmt.Println(i, v)
 	}
 
-	if x == 10 || y == 10 {
-		fmt.Println("||")
+	for _, v := range l{
+		fmt.Println(v)
+	}
+
+	m := map[string]int{"apple": 100, "banana": 200,}
+
+	for k, v := range m{
+		fmt.Println(k, v)
+	}
+	
+	for k := range m{
+		fmt.Println(k)
+	}
+
+	for _, v := range m{
+		fmt.Println(v)
 	}
 }
