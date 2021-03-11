@@ -4,21 +4,21 @@ import (
 	"fmt"
 )
 
-
-func thirdPartyConnectDB(){
-	panic("unable to connect DB!!")
+func one(x *int){
+	*x = 1
 }
 
-func save(){
-	defer func(){
-		s := recover()
-		fmt.Println(s)
-	}()
-	thirdPartyConnectDB()
-}
 
 func main(){
-	save()
-	fmt.Println("OK?")
+	var n int = 100
+	one(&n)
+	fmt.Println(n)
+	fmt.Println(&n)
 
+	// fmt.Println(&n)
+	// var f = 100
+	// fmt.Println(&f)
+	// var p *int = &n
+	// fmt.Println(p)
+	// fmt.Println(*p)
 }
